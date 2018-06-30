@@ -19,8 +19,12 @@ class CreateViewController: UIViewController, UIImagePickerControllerDelegate, U
     @IBOutlet weak var createButton: UIBarButtonItem!
     @IBOutlet weak var navBar: UIToolbar!
     @IBOutlet weak var toolBar: UIToolbar!
+
     
-   
+    // MARK: Variables
+    let BOTTOM_CONSTRAINT = 50 as CGFloat
+    let TOOLBAR_HEIGHT = 44 as CGFloat
+    
     struct Meme {
         var topText: String!
         var bottomText: String!
@@ -116,21 +120,26 @@ class CreateViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
     
     // MARK: Keyboard
-    @objc func keyboardWillShow(_ notification:Notification) {
+    @objc func keyboardWillShow(_ notification: Notification) {
         if bottomText.isEditing {
-            view.frame.origin.y -= getKeyboardHeight(notification)
+            view.frame.origin.y = -getKeyboardHeight(notification)
         }
+        // horizontal view iphone se
+        if view.frame.height <= 320 && topText.isEditing {
+            view.frame.origin.y = -22
+        }
+       
     }
     
     @objc func keyboardWillHide(_ notification: Notification){
         view.frame.origin.y = 0
     }
     
+    
     func getKeyboardHeight(_ notification:Notification) -> CGFloat {
-        
         let userInfo = notification.userInfo
         let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue // of CGRect
-        return keyboardSize.cgRectValue.height
+        return keyboardSize.cgRectValue.height - BOTTOM_CONSTRAINT - TOOLBAR_HEIGHT
     }
     
     func subscribeToKeyboardNotifications() {
@@ -151,7 +160,7 @@ class CreateViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "preview"{
-            let vc = segue.destination as! imageViewController
+            let vc = segue.destination as! ImageViewController
             vc.preview = generateMemedImage()
         }
     }

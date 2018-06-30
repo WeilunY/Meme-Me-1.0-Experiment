@@ -8,7 +8,7 @@
 
 import UIKit
 
-class imageViewController: UIViewController {
+class ImageViewController: UIViewController {
     
     var preview: UIImage!
     @IBOutlet weak var memePreview: UIImageView!
@@ -16,7 +16,6 @@ class imageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         memePreview.image = preview
-
     }
 
     

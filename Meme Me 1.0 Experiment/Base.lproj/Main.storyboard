@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,14 +15,14 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="CreateViewController" customModule="Meme_Me_1_0_Experiment" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pf9-gM-KLG">
-                                <rect key="frame" x="0.0" y="64" width="375" height="559"/>
+                                <rect key="frame" x="0.0" y="44" width="667" height="287"/>
                             </imageView>
                             <textField opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" usesAttributedText="YES" allowsEditingTextAttributes="YES" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="pFx-mj-p6U">
-                                <rect key="frame" x="64" y="128" width="247" height="17"/>
+                                <rect key="frame" x="64" y="94" width="539" height="17"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <attributedString key="attributedText">
                                     <fragment content="TOP">
@@ -35,7 +35,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" allowsEditingTextAttributes="YES" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="2DT-JF-Zn2">
-                                <rect key="frame" x="64" y="542" width="247" height="17"/>
+                                <rect key="frame" x="64" y="264" width="539" height="17"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <attributedString key="attributedText">
                                     <fragment content="BUTTOM">
@@ -48,7 +48,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sGk-g3-u8X">
-                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="331" width="667" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="IVu-n0-9yv"/>
                                 </constraints>
@@ -74,7 +74,7 @@
                                 </items>
                             </toolbar>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kwp-Dr-t7q">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="eL6-AC-bDN"/>
                                 </constraints>
@@ -98,13 +98,13 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sGk-g3-u8X" secondAttribute="trailing" id="LCc-yf-Jpf"/>
                             <constraint firstItem="pf9-gM-KLG" firstAttribute="top" secondItem="Kwp-Dr-t7q" secondAttribute="bottom" id="OJW-2e-a79"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pFx-mj-p6U" secondAttribute="trailing" constant="64" id="Osq-Il-QPq"/>
-                            <constraint firstItem="sGk-g3-u8X" firstAttribute="top" secondItem="2DT-JF-Zn2" secondAttribute="bottom" constant="64" id="T9w-1h-LX9"/>
+                            <constraint firstItem="sGk-g3-u8X" firstAttribute="top" secondItem="2DT-JF-Zn2" secondAttribute="bottom" constant="50" id="T9w-1h-LX9"/>
                             <constraint firstItem="2DT-JF-Zn2" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="X9w-XE-3fB"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="sGk-g3-u8X" secondAttribute="bottom" id="Yzq-OB-bSZ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Kwp-Dr-t7q" secondAttribute="trailing" id="aH4-ia-PSQ"/>
                             <constraint firstItem="sGk-g3-u8X" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dYP-Oc-qUI"/>
                             <constraint firstItem="pFx-mj-p6U" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="gEx-Io-Keu"/>
-                            <constraint firstItem="pFx-mj-p6U" firstAttribute="top" secondItem="Kwp-Dr-t7q" secondAttribute="bottom" constant="64" id="i6E-oL-Xvn"/>
+                            <constraint firstItem="pFx-mj-p6U" firstAttribute="top" secondItem="Kwp-Dr-t7q" secondAttribute="bottom" constant="50" id="i6E-oL-Xvn"/>
                             <constraint firstItem="pf9-gM-KLG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="kh6-yg-53d"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="Kwp-Dr-t7q" secondAttribute="top" id="nzS-Id-m7d"/>
                             <constraint firstItem="2DT-JF-Zn2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="64" id="to4-PW-geC"/>
@@ -130,16 +130,16 @@
         <!--Image View Controller-->
         <scene sceneID="Hq4-P1-ceA">
             <objects>
-                <viewController id="FhK-s2-wcf" customClass="imageViewController" customModule="Meme_Me_1_0_Experiment" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="FhK-s2-wcf" customClass="ImageViewController" customModule="Meme_Me_1_0_Experiment" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QHd-Vs-MDw">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UAf-XQ-1F8">
-                                <rect key="frame" x="16" y="96" width="343" height="527"/>
+                                <rect key="frame" x="16" y="76" width="635" height="255"/>
                             </imageView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sQn-8N-u76">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="bHo-md-bfG"/>
                                 </constraints>
