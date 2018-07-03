@@ -9,7 +9,8 @@
 import UIKit
 
 class CreateViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
-
+    
+    // MARK: Outlets
     @IBOutlet weak var imagePickerView: UIImageView!
     @IBOutlet weak var albumButton: UIBarButtonItem!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
@@ -21,17 +22,10 @@ class CreateViewController: UIViewController, UIImagePickerControllerDelegate, U
     @IBOutlet weak var toolBar: UIToolbar!
 
     
-    // MARK: Variables
+    // MARK: Attributes
     let BOTTOM_CONSTRAINT = 50 as CGFloat
     let TOOLBAR_HEIGHT = 44 as CGFloat
-    
-    struct Meme {
-        var topText: String!
-        var bottomText: String!
-        var originalImage: UIImage!
-        var memedImage: UIImage!
-    }
-    
+
     let memeTextAttributes:[String: Any] = [
         NSAttributedStringKey.strokeColor.rawValue: UIColor.black,
         NSAttributedStringKey.foregroundColor.rawValue: UIColor.white,
@@ -39,6 +33,7 @@ class CreateViewController: UIViewController, UIImagePickerControllerDelegate, U
         NSAttributedStringKey.strokeWidth.rawValue: -5]
     
     
+    // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTextField(textField: topText, content: "TOP")
@@ -184,8 +179,13 @@ class CreateViewController: UIViewController, UIImagePickerControllerDelegate, U
     // MARK: Save
     func save() {
         // Create the meme
-        _ = Meme(topText: topText.text!, bottomText: bottomText.text!, originalImage: imagePickerView.image!, memedImage: generateMemedImage())
+        let meme = Meme(topText: topText.text!, bottomText: bottomText.text!, originalImage: imagePickerView.image!, memedImage: generateMemedImage())
         print("Save method called")
+        
+        // Add it to the memes array in the Application Delegate
+        let object = UIApplication.shared.delegate
+        let appDelegate = object as! AppDelegate
+        appDelegate.memes.append(meme)
     }
     
     func generateMemedImage() -> UIImage {
@@ -201,6 +201,11 @@ class CreateViewController: UIViewController, UIImagePickerControllerDelegate, U
         toolBar.isHidden = false
         return memedImage
     }
-
+    
+    // MARK: Back
+    @IBAction func back(_ sender: Any) {
+          performSegue(withIdentifier: "back", sender: sender)
+    }
+    
 }
 
